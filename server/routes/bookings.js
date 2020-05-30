@@ -2,19 +2,19 @@ var express = require("express");
 var router = express.Router();
 var mongojs =  require("mongojs");
 
-var db = mongojs("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/app",["bookings"]);
+var db = mongojs("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/Mydatabase",["Mycollection"]);
 
-router.get("/bookings", function(req, res, next){
-	db.bookings.find(function(err, bookings){
+router.get("/Mycollection", function(req, res, next){
+	db.Mycollection.find(function(err, Mycollection){
 		if(err){
 			res.send(err);
 
 		}
-		res.json(bookings);
+		res.json(Mycollection);
 	})
 }); 
 
-router.get("/bookings", function(req, res, next){
+router.get("/Mycollection", function(req, res, next){
 	res.send("BOOKINGS ROUTE");
 }); 
 
