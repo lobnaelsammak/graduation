@@ -1,9 +1,10 @@
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
-
+const cors = require('cors');
 var index = require("./routes/index");
 var bookings = require("./routes/bookings");
+var accepted = require("./routes/accepted")
 
 var app = express();
 var port = 3000;
@@ -24,10 +25,12 @@ app.engine("html", require("ejs").renderFile);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(express.json());
+app.use(cors());
 //Routes
 
 app.use("/", index);
 app.use("/api", bookings);
+app.use("/api",accepted);
 // app.use("/api", driverLocation);
 // app.use("/api", drivers);
