@@ -55,6 +55,10 @@ export default class App extends Component {
     } catch (error){
       console.log(`Error is : ${error}`);
     }
+        this.state = this.state.refresh;
+    this.setState({ data: [] });
+    //Call the Service to get the latest data
+    this.fetchData();
     
   };
    
