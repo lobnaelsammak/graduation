@@ -4,10 +4,10 @@ var mongojs =  require("mongojs");
 var mongoose = require("mongoose");
 
 
-var db1 = mongojs("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/Mydatabase",["AcceptedRequests"])	
+var db1 = mongojs("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/Requests",["AcceptedRequests"])	
 
 //CONNECTION TO DB
-mongoose.connect("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/Mydatabase", {
+mongoose.connect("mongodb+srv://lobna:lobna@gradproj-elh8e.mongodb.net/Requests", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
