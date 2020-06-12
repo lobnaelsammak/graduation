@@ -20,7 +20,7 @@ export default class App extends Component {
   
   componentDidMount() {
     this.fetchData();
-    
+    setInterval(this.fetchData, 5000); 
   }
 
   //----------------------------------------------------------------------------------------------------------------------
